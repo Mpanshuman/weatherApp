@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        *{
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+        .content{
+            text-align: center;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Weather Forcast</h1>
+        <form action="" method="GET">
+            <label for="city"></label>
+            <input type="text" name="city" id="city" value="{{request.GET.city}}">
+            <input type="submit" name="submit" id="btn-sbt" value="Search">
+        </form>
+        {% if weather %}
+        <h3>{{weather.region}}</h3>
+        <h3>{{weather.daytime}}</h3>
+        <h3>{{weather.temp}}°</h3>
+        <h3>{{weather.sky}}</h3>      
+        {% endif %}
+    </div>
+</body>
+</html>
